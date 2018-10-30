@@ -1,0 +1,73 @@
+<head>
+    <link rel="stylesheet" href="../css/style.css" type="text/css" />
+</head>
+
+{{!-- {{#each spell}}
+<div class="spellCard">
+    <p>{{this.name}}</p>
+    <p>{{this.description}}</p>
+</div>
+
+{{/each}}
+
+<p>Test</p> --}}
+<div class="container top">
+    {{#each spells}}
+
+    <div class="spellCard ">
+        <div class="spellName">
+            <p class="fl">{{name}}</p>
+            <p class="fr">{{type}}: {{level}}</p>
+        </div>
+
+        <br>
+        <hr>
+
+        <div class="spellTraits">
+            <p class="fl">Traits: {{traits}}</p>
+            <p class="fr">{{action}}: {{casting}}</p>
+            
+        </div>
+        <br>
+        <hr>
+        {{#if trigger}}
+        <div class="fl">
+            <p>{{trigger}}</p>
+        </div>
+        <br>
+        <hr>
+        {{/if}}
+
+        {{#if duration}}
+        <div class="fl">
+            <p>{{duration}}</p>
+        </div>
+        <br>
+        <hr>
+        {{/if}}
+
+        <div class="targeting">
+            {{#if range}}
+        <p class="fl">Range: {{range}}  
+            </p>
+            {{/if}}
+            {{#if area}}
+            <p class="fl">Area: {{area}}
+            </p>
+            {{/if}}
+        <p class="fr">{{target}}</p>
+        </div>
+
+        <br>
+        <hr>
+
+        <div>
+            <p>{{description}}</p>
+
+            <p>{{heightened}}</p>
+
+        </div>
+    </div>
+
+    {{/each}}
+</div>

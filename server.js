@@ -13,8 +13,6 @@ var path = require("path");
 var app = express();
 var PORT = process.env.PORT || 8080;
 
-// Requiring our models for syncing
-var db = require("./models");
 
 // Sets up the Express app to handle data parsing
 
@@ -36,17 +34,7 @@ app.set("view engine", "handlebars");
 
 // Routes
 // =============================================================
+require("./routes/spellCatagory-routes")(app);
 
-require("./routes/locations-routes.js")(app);
-require("./routes/review-routes.js")(app);
-
-
-
-// Syncing our sequelize models and then starting our Express app
-// =============================================================
-
-db.sequelize.sync()
-    .then(function () {
-        console.log("Starting the server on port " + PORT)
-        app.listen(PORT);
-    });
+console.log("Starting the server on port "+ PORT)
+app.listen(PORT);

@@ -26,7 +26,7 @@
         <div class="spellTraits">
             <p class="fl">Traits: {{traits}}</p>
             <p class="fr">{{action}}: {{casting}}</p>
-            
+
         </div>
         <br>
         <hr>
@@ -48,14 +48,16 @@
 
         <div class="targeting">
             {{#if range}}
-        <p class="fl">Range: {{range}}  
+            <p class="fl">Range: {{range}}
             </p>
             {{/if}}
             {{#if area}}
             <p class="fl">Area: {{area}}
             </p>
             {{/if}}
-        <p class="fr">{{target}}</p>
+            {{#if}}
+            <p class="fr">{{target}}</p>
+            {{/if}}
         </div>
 
         <br>
@@ -63,8 +65,9 @@
 
         <div>
             <p>{{description}}</p>
-
+            {{#if heightened}}
             <p>{{heightened}}</p>
+            {{/if}}
 
         </div>
     </div>

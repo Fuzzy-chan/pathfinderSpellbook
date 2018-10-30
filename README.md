@@ -1,5 +1,3 @@
-# MyCleveland
-
 ## Description
 A web application designed to allow users to create and print a spellbook for Pathfinder Playtest!
 
@@ -22,5 +20,4 @@ A web application designed to allow users to create and print a spellbook for Pa
 ## Authors
 
 * **Kenneth Robinson** - [Kenneth Robinson](https://github.com/Fuzzy-chan)
-
 

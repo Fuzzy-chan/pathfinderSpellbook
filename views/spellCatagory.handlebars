@@ -2,15 +2,6 @@
     <link rel="stylesheet" href="../css/style.css" type="text/css" />
 </head>
 
-{{!-- {{#each spell}}
-<div class="spellCard">
-    <p>{{this.name}}</p>
-    <p>{{this.description}}</p>
-</div>
-
-{{/each}}
-
-<p>Test</p> --}}
 <div class="container top">
     {{#each spells}}
 
@@ -55,7 +46,7 @@
             <p class="fl">Area: {{area}}
             </p>
             {{/if}}
-            {{#if}}
+            {{#if target}}
             <p class="fr">{{target}}</p>
             {{/if}}
         </div>
@@ -70,7 +61,33 @@
             {{/if}}
 
         </div>
+        <button data-name="{{name}}" data-type={{type}} data-level={{level}} data-traits = "{{traits}}"
+         class="btn btn-primary addSpell">Add to Spellbook!</button>
     </div>
+    
 
     {{/each}}
 </div>
+
+<script>
+
+    var yourSpells = [];
+
+$(".addSpell").click(function(){
+    var name = this.dataset.name;
+    var type = this.dataset.type;
+    var level = this.dataset.level;
+    var traits = this.dataset.traits;
+
+    var newSpell = {
+        name: name,
+        type: type,
+        level:level,
+        traits: traits
+        }
+
+    console.log(newSpell)
+    
+})
+
+</script>

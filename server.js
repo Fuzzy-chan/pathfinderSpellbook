@@ -35,6 +35,7 @@ app.set("view engine", "handlebars");
 // Routes
 // =============================================================
 require("./routes/spellCatagory-routes")(app);
+require("./public/yourSpells");
 
 console.log("Starting the server on port "+ PORT)
 app.listen(PORT);

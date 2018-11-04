@@ -14,6 +14,14 @@ module.exports = function (app) {
         res.render("spellCatagory", hbsObject)
     });
 
+    app.get("/api/yourSpells", function (req, res) {
+        var tempSpells = sessionStorage.getItem("yourSpells")
+        var tempSpellsArray = tempSpells.split(",")
+        var hbsObject = {
+            spells: tempSpellsArray
+        }
+        res.render("spellCatagory", hbsObject)
+    });
 
 };
 

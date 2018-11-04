@@ -12,10 +12,10 @@
 
 .main {
     margin-top: 60px;
-    background-image: url("../img/cleve.jpg");
+    /* background-image: url("../img/cleve.jpg");
     background-attachment: fixed;
     background-size: cover;
-    background-repeat: no-repeat;
+    background-repeat: no-repeat; */
 }
 
 p {
@@ -337,6 +337,6 @@ a:hover {
     margin-top: 60px;
 }
 
-.addSpell{
+.addSpell,.removeSpell{
     margin-bottom: 5px;
 }

@@ -61,7 +61,21 @@
             {{/if}}
 
         </div>
-        <button data-name="{{name}}" data-type={{type}} data-level={{level}} data-traits = "{{traits}}"
+        <button 
+        data-name="{{name}}" 
+        data-type="{{type}}" 
+        data-level="{{level}}" 
+        data-traits = "{{traits}}" 
+        data-action="{{action}}" 
+        data-casting="{{casting}}" 
+        {{#if trigger}}data-trigger="{{trigger}}"{{/if}} 
+        {{#if duration}}data-duration="{{duration}}"{{/if}} 
+        {{#if range}}data-range="{{range}}"{{/if}}
+        {{#if area}}data-area="{{area}}"{{/if}}
+        {{#if target}}data-target="{{target}}"{{/if}}
+        data-description="{{description}}"
+        {{#if heightened}}data-heightened="{{heightened}}"{{/if}}
+
          class="btn btn-primary addSpell">Add to Spellbook!</button>
     </div>
     
@@ -71,17 +85,16 @@
 
 <script>
 
-$(".addSpell").click(function(){
+$(".addSpell").click(function(req){
     var newSpell = this.dataset
+    //console.log(newSpell)
 
-    console.log(newSpell)
-
-    var tempSpells = sessionStorage.getItem("yourSpells")
-    var tempSpellsArray = tempSpells.split(",")
-    tempSpellsArray.push(newSpell)
-    sessionStorage.setItem("yourSpells", tempSpellsArray)
-    console.log(sessionStorage.getItem("yourSpells"))
+    var spellArray = JSON.parse(sessionStorage.getItem("yourSpells"))
+    spellArray.push(newSpell)
+    //console.log(JSON.stringify(spellArray))
+    sessionStorage.setItem("yourSpells", JSON.stringify(spellArray))
     
+    //console.log(JSON.parse(sessionStorage.getItem("yourSpells")))
 })
 
 </script>

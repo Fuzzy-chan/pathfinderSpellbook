@@ -22,11 +22,11 @@
     </div>
 
     <script>
-        if (!sessionStorage.set) {
-            var yourSpells = [];
-
-            sessionStorage.setItem("yourSpells", yourSpells);
+            if (!sessionStorage.set) {
+                var yourSpells = [];
+            sessionStorage.setItem("yourSpells", JSON.stringify(yourSpells));
             sessionStorage.setItem("set", true)
         }
+        console.log(JSON.parse(sessionStorage.getItem("yourSpells")))
 
     </script>

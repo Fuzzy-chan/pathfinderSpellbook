@@ -7,10 +7,12 @@
 var express = require("express");
 var bodyParser = require("body-parser");
 var path = require("path");
+var session = require('express-session');
 
 // Sets up the Express App
 // =============================================================
 var app = express();
+app.use(session({secret:"whatever"}));
 var PORT = process.env.PORT || 8080;
 
 

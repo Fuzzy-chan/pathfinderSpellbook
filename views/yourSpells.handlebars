@@ -62,7 +62,7 @@
 
         </div>
         <button data-name="{{name}}" data-type={{type}} data-level={{level}} data-traits = "{{traits}}"
-         class="btn btn-primary removeSpell">Add to Spellbook!</button>
+         class="btn btn-primary removeSpell">Remove from your Spellbook.</button>
     </div>
     
 
@@ -71,17 +71,17 @@
 
 <script>
 
-$(".removeSpell").click(function(){
-    var newSpell = this.dataset
+ //$(".removeSpell").click(function(){
+ //   var newSpell = this.dataset
 
-    console.log(newSpell)
+ //   console.log(newSpell)
 
-    var tempSpells = sessionStorage.getItem("yourSpells")
-    var tempSpellsArray = tempSpells.split(",")
-    tempSpellsArray.push(newSpell)
-    sessionStorage.setItem("yourSpells", tempSpellsArray)
-    console.log(sessionStorage.getItem("yourSpells"))
+ //   var tempSpells = sessionStorage.getItem("yourSpells")
+ //   var tempSpellsArray = tempSpells.split(",")
+ //   tempSpellsArray.push(newSpell)
+ //   sessionStorage.setItem("yourSpells", tempSpellsArray)
+ //   console.log(sessionStorage.getItem("yourSpells"))
     
-})
+//}) 
 
 </script>

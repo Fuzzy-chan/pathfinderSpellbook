@@ -15,14 +15,17 @@ module.exports = function (app) {
     });
 
     app.get("/api/yourSpells", function (req, res) {
-        var tempSpells = sessionStorage.getItem("yourSpells")
-        var tempSpellsArray = tempSpells.split(",")
-        var hbsObject = {
-            spells: tempSpellsArray
-        }
-        res.render("spellCatagory", hbsObject)
-    });
+        var sessionSpells = req.session.yourSpells
 
+        console.log(sessionSpells)
+        
+        //var spellsArray =JSON.parse(sessionSpells)
+        //console.log(sessionSpells)
+        //var hbsObject = {
+        //    spells: sessionSpells
+        //}
+        res.render("spellCatagory")
+    });
 };
 
 

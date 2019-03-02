@@ -93,8 +93,12 @@ $(".addSpell").click(function(req){
     spellArray.push(newSpell)
     //console.log(JSON.stringify(spellArray))
     sessionStorage.setItem("yourSpells", JSON.stringify(spellArray))
-    
-    //console.log(JSON.parse(sessionStorage.getItem("yourSpells")))
+    $.ajax({ 
+      type: 'POST', 
+      url: 'yourSpells', 
+      data: { yourSpells: spellArray }, 
+      dataType: 'json'
+    });
 })
 
 </script>

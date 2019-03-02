@@ -1,4 +1,5 @@
 var spells = require("../public/spells")
+var yourSpells ={};
 
 module.exports = function (app) {
 
@@ -14,17 +15,19 @@ module.exports = function (app) {
         res.render("spellCatagory", hbsObject)
     });
 
-    app.get("/api/yourSpells", function (req, res) {
-        var sessionSpells = req.session.yourSpells
-
-        console.log(sessionSpells)
+    app.post("/api/spellCatagory/yourSpells", function(req,res) {
+        yourSpells = req.body.yourSpells
         
-        //var spellsArray =JSON.parse(sessionSpells)
-        //console.log(sessionSpells)
-        //var hbsObject = {
-        //    spells: sessionSpells
-        //}
-        res.render("spellCatagory")
+    })
+
+    app.get("/api/yourSpells", function (req, res) {
+        // var spellsArray =JSON.parse(yourSpells)
+        var spells = yourSpells
+        
+        var hbsObject = {
+           spells: spells
+        }
+        res.render("yourSpells", hbsObject)
     });
 };
 

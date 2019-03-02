@@ -61,44 +61,38 @@
             {{/if}}
 
         </div>
-        <button 
-        data-name="{{name}}" 
-        data-type="{{type}}" 
-        data-level="{{level}}" 
-        data-traits = "{{traits}}" 
-        data-action="{{action}}" 
-        data-casting="{{casting}}" 
-        {{#if trigger}}data-trigger="{{trigger}}"{{/if}} 
-        {{#if duration}}data-duration="{{duration}}"{{/if}} 
-        {{#if range}}data-range="{{range}}"{{/if}}
-        {{#if area}}data-area="{{area}}"{{/if}}
-        {{#if target}}data-target="{{target}}"{{/if}}
-        data-description="{{description}}"
-        {{#if heightened}}data-heightened="{{heightened}}"{{/if}}
+        <div class="absolute">
+            <button data-name="{{name}}" data-type="{{type}}" data-level="{{level}}" data-traits="{{traits}}"
+                data-action="{{action}}" data-casting="{{casting}}" {{#if trigger}}data-trigger="{{trigger}}" {{/if}}
+                {{#if duration}}data-duration="{{duration}}" {{/if}} {{#if range}}data-range="{{range}}" {{/if}}
+                {{#if area}}data-area="{{area}}" {{/if}} {{#if target}}data-target="{{target}}" {{/if}}
+                data-description="{{description}}" {{#if heightened}}data-heightened="{{heightened}}" {{/if}}
+                class="btn btn-primary addSpell">Add to Spellbook!</button>
+        </div>
 
-         class="btn btn-primary addSpell">Add to Spellbook!</button>
     </div>
-    
+
 
     {{/each}}
 </div>
 
 <script>
 
-$(".addSpell").click(function(req){
-    var newSpell = this.dataset
-    //console.log(newSpell)
+    $(".addSpell").click(function (req) {
+        var newSpell = this.dataset
+        //console.log(newSpell)
 
-    var spellArray = JSON.parse(sessionStorage.getItem("yourSpells"))
-    spellArray.push(newSpell)
-    //console.log(JSON.stringify(spellArray))
-    sessionStorage.setItem("yourSpells", JSON.stringify(spellArray))
-    $.ajax({ 
-      type: 'POST', 
-      url: 'yourSpells', 
-      data: { yourSpells: spellArray }, 
-      dataType: 'json'
-    });
-})
+        var spellArray = JSON.parse(sessionStorage.getItem("yourSpells"))
+        spellArray.push(newSpell)
+        //console.log(JSON.stringify(spellArray))
+        sessionStorage.setItem("yourSpells", JSON.stringify(spellArray))
+        $.ajax({
+            type: 'POST',
+            url: 'yourSpells',
+            data: { yourSpells: spellArray },
+            dataType: 'json'
+        });
+        <span class="popuptext" id="myPopup">Added!</span>
+    })
 
 </script>

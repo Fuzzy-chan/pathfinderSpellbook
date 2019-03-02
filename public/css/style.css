@@ -311,6 +311,7 @@ a:hover {
 }
 
 .spellCard{
+    position: relative;
     border-style: solid;
     border-width: 5px;
     border-radius: 10px;
@@ -318,8 +319,9 @@ a:hover {
     padding-left: 5px;
     padding-top: 5px;
     padding-right: 5px;
-    display: inline-block;
-    max-width: 500px;
+    display: inline-table;
+    max-width: 450px;
+    height: 500px;
 }
 
 .fr{
@@ -339,4 +341,9 @@ a:hover {
 
 .addSpell,.removeSpell{
     margin-bottom: 5px;
+}
+
+.absolute {
+    position: absolute;
+    bottom: 10px;
 }
